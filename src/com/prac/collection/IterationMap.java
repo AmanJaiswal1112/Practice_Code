@@ -7,6 +7,7 @@ import java.util.Map;
 public class IterationMap {
     public static void main(String[] arg) {
         Map<String, String> gfg = new HashMap<String, String>();
+        Map<StringBuffer, String> gfg1 = new HashMap<StringBuffer, String>();
 
         // enter name/url pair
         gfg.put("GFG", "geeksforgeeks.org");
