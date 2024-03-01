@@ -15,7 +15,6 @@ public class FrequencyCount {
     }
 
     private static void frequencyCountUsingJava8(String st) {
-        char[] ch = st.toCharArray();
         Map<Character, Long> map = st.chars().mapToObj(c->(char)c).
                 collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
