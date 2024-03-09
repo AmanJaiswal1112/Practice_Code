@@ -15,6 +15,7 @@ public class ReverseListOfInteger {
         list1.add(list.get(i));
          len--;
         }
+
         list1.forEach(System.out::print);
 
 

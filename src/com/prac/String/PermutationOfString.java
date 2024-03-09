@@ -2,7 +2,7 @@ package com.prac.String;
 
 public class PermutationOfString {
     public static void main(String[] args) {
-        String str = "ABC";
+        String str = "ABCD";
         int len = str.length();
         System.out.println("All the permutations of the string are: ");
         generateAllPermutation(str, 0, len);
