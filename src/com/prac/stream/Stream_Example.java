@@ -1,8 +1,6 @@
 package com.prac.stream;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Stream_Example {
@@ -15,6 +13,69 @@ public class Stream_Example {
         System.out.println(city);
 
         //Find the count of male and female employees present in the organization.
+        Map<String, Long> map = empList.stream().collect(Collectors.groupingBy(e -> e.getGender(), Collectors.counting()));
+        System.out.println(map);
+
+        //Print the names of all departments in the organization.
+        List<String> deptName = empList.stream().map(Employee::getDeptName).distinct().collect(Collectors.toList());
+        System.out.println(deptName);
+
+        //Find maximum age of employee.
+        OptionalInt max = empList.stream().mapToInt(Employee::getAge).max();
+        if (max.isPresent())
+            System.out.println("Maximum age of Employee: " + max.getAsInt());
+
+        // Print Average age of Male and Female Employees.
+        Map<String, Double> avgAge = empList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
+        System.out.println(avgAge);
+
+        //Print the number of employees in each department.
+        Optional<Employee> oldestEmp = empList.stream().max(Comparator.comparingInt(Employee::getAge));
+        Employee oldestEmployee = oldestEmp.get();
+        System.out.println("Oldest employee details:: \n" + oldestEmployee);
+
+        // Find youngest female employee.
+        Optional<Employee> employeeOptional = empList.stream().filter(e -> e.getGender().equals("F")).min(Comparator.comparingInt(Employee::getAge));
+        Employee yongestEmployee = employeeOptional.get();
+        System.out.println("Yongest employee details:: \n" + yongestEmployee);
+
+        //Find the department name which has the highest number of employees.
+        Map<String, Long> maxNoOfEmployeesInDept = empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.counting()));
+        System.out.println(maxNoOfEmployeesInDept);
+
+        Map.Entry<String, Long> a = maxNoOfEmployeesInDept.entrySet().stream().max(Map.Entry.comparingByValue()).get();
+        System.out.println("Max no of employees present in Dept :: " + a.getValue());
+
+        //Find if there any employees from HR Department.
+        Optional<Employee> stringOptional =empList.stream().filter(e->e.getDeptName() == "HR").findAny();
+        if(stringOptional.isPresent())
+            System.out.println(stringOptional.get());
+
+        // Find the department names that these employees work for, where the number of employees in the department is over 3.
+        empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.counting()))
+                .entrySet().stream().filter(e->e.getValue() >3).collect(Collectors.toList()).forEach(System.out::println);
+
+        //Sorting a Stream by age and name fields.
+        Comparator<Employee> nameComparator = Comparator.comparing(Employee::getName);
+        Comparator<Employee> ageComparator = Comparator.comparingInt(Employee::getAge);
+
+        empList.stream().sorted(nameComparator.thenComparing(ageComparator)).forEach(System.out::println);
+
+        //Highest experienced employees in the organization.
+        Optional<Employee> optional = empList.stream().sorted(Comparator.comparingInt(Employee::getYearOfJoining)).findFirst();
+        if(optional.isPresent())
+            System.out.println(optional.get());
+
+
+        //Find Second Highest salary in the organisation.
+        Optional<Employee> emp2 =   empList.stream().sorted(Comparator.comparingDouble(Employee::getSalary).reversed()).skip(1).findFirst();
+        System.out.println("Highest Salary in the organisation : " + emp2.get().getSalary());
+
+        //Nth Highest salary.
+        int n = 2;// this can be any nth number highest salary
+        Optional<Employee> emp3 = empList.stream().sorted(Comparator.comparingDouble(Employee::getSalary)
+                .reversed()).skip(n-1).findFirst();
+        System.out.println("Second Highest Salary in the organisation : " + emp3.get().getSalary());
 
 
 
