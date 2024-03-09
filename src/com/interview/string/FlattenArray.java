@@ -15,6 +15,7 @@ public class FlattenArray {
     }
 
     public static Integer[] flatten(Object[] inputArray) throws Exception {
+/*
 
         List<Integer> integerList =Arrays.stream(inputArray)
                 .mapToInt(t->IntStream::flatMap(i->i))
@@ -22,6 +23,7 @@ public class FlattenArray {
                 .flatMap(value -> IntStream.of(value))
 
                ;
+*/
 
 
 
