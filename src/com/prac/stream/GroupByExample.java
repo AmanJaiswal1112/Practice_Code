@@ -18,6 +18,8 @@ public class GroupByExample {
                 new Item("apple", 20, new BigDecimal("9.99"))
         );
 
+        findElementAppearOnce(items);
+
         Map<String, Long> counting =items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.counting()));
         System.out.println(counting);
 
@@ -29,6 +31,18 @@ public class GroupByExample {
 
         counting2.forEach((k,v) -> System.out.println("Key = "
                 + k + ", Value = " + v.getQty()));
+    }
+
+    private static void findElementAppearOnce(List<Item> items) {
+        List<String> list = new ArrayList<>();
+        Map<String, Long> counting =items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.counting()));
+
+        for (Map.Entry<String, Long> map:counting.entrySet()) {
+            if(map.getValue() == 1){
+                list.add(map.getKey());
+            }
+        };
+        System.out.println(list);
     }
 }
 
