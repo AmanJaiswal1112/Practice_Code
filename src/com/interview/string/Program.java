@@ -18,7 +18,7 @@ public class Program
         System.out.println(result);
     }
 
-
+//TOTO
 
 
         public static int solution(String s) {
