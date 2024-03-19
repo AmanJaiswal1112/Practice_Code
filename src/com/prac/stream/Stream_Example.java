@@ -49,7 +49,7 @@ public class Stream_Example {
         //Find if there any employees from HR Department.
         Optional<Employee> stringOptional =empList.stream().filter(e->e.getDeptName() == "HR").findAny();
         if(stringOptional.isPresent())
-            System.out.println(stringOptional.get());
+            System.out.println("Find if there any employees from HR Department"+stringOptional.get());
 
         // Find the department names that these employees work for, where the number of employees in the department is over 3.
         empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.counting()))
