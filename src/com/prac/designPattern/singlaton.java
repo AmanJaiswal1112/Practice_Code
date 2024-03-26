@@ -1,4 +1,4 @@
-package com;
+package com.prac.designPattern;
 
 public class singlaton {
 
