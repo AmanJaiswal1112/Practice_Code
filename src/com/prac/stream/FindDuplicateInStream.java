@@ -33,11 +33,16 @@ public class FindDuplicateInStream {
         return newSet;
     }
 
-    public static <T> Map<T, Long > findDuplicateInStream(List<T> list)
+    public static <T> List<T> findDuplicateInStream(List<T> list)
     {
-        Map<T, Long > cityUserCountMap = list
+        List<T> cityUserCountMap = list
                 .stream()
-                .collect(Collectors.groupingBy(p -> p, Collectors.counting()));
+                .collect(Collectors.groupingBy(p -> p))
+                .entrySet()
+                .stream()
+                .filter(entry-> entry.getValue().size() > 1)
+                .map(entry->entry.getKey())
+                .collect(Collectors.toList());
         return cityUserCountMap;
     }
 

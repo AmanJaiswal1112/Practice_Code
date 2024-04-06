@@ -68,7 +68,6 @@ public class All_Intermediate_Operations_AND_Terminal_Operations {
         List<Payment> firstTwoPaymentsByMary = payments.stream().filter(t->t.getCustomerName().equals("Mary")).limit(2).collect(Collectors.toList());
         System.out.println(firstTwoPaymentsByMary);
 
-
     }
 }
 class Payment {

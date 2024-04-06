@@ -58,9 +58,10 @@ public class Stream_Example {
         //Sorting a Stream by age and name fields.
         Comparator<Employee> nameComparator = Comparator.comparing(Employee::getName);
         Comparator<Employee> ageComparator = Comparator.comparingInt(Employee::getAge);
+        Comparator<Employee> idComparator = Comparator.comparingInt(Employee::getId);
 
         empList.stream().sorted(nameComparator.thenComparing(ageComparator)).forEach(System.out::println);
-
+      //  empList.stream().sorted(idComparator).forEach(System.out::println);
         //Highest experienced employees in the organization.
         Optional<Employee> optional = empList.stream().sorted(Comparator.comparingInt(Employee::getYearOfJoining)).findFirst();
         if(optional.isPresent())

@@ -14,6 +14,6 @@ public class FindPairsOfGivenSum {
             }
             map.put(nums[i], i);
         }
-        System.out.println(map);
+       // System.out.println(map);
     }
 }
