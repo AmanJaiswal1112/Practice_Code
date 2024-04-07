@@ -5,7 +5,7 @@ package com.interview.string;
     public static int temp = 1;
     private static int temp2 = 1;
     public  int temp3 = 1;private int temp4 = 1;
-
+    private static int temp7 = 0;
     public static class  inner{
 
         private int sum(){
