@@ -1,6 +1,6 @@
 package com.interview.string;
 
-public class Test46 {
+public class Implementation_Custome_FunctionalInterface {
     public static void main(String[] args) {
         System.out.println("hello");
 

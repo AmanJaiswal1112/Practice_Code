@@ -3,7 +3,7 @@ package com.interview.string;
 import java.util.Arrays;
 import java.util.List;
 
-public class Test48 {
+public class FindIndexOfElementInArray {
     public static void main(String[] args) {
         Integer[] arr = {14,16,18,23,45,98};
         int element =23;

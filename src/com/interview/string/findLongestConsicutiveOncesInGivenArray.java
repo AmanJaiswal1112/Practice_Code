@@ -2,7 +2,7 @@ package com.interview.string;
 
 import java.util.Arrays;
 
-public class Test47 {
+public class findLongestConsicutiveOncesInGivenArray {
     public static void main(String[] args) {
     int[] num =  {1,0,1,0,1,1,1,1,1,0,1,1,1,1};
     int [] longestArray = findLongestConsicutiveOnces(num);

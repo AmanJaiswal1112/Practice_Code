@@ -1,0 +1,66 @@
+class Fruit {
+  public void test() { sout("Sweet"); }
+}
+
+class Mango extends Fruit {
+  public void test() { sout("Very Sweet"); }
+}
+
+class Watermalon extends Fruit {
+  public void test() { sout("Not Very Sweet"); }
+}
+
+
+main () {
+  Fruit f = new Fruit();
+  f.test();   //Sweet
+  Mango m = new Fruit(); //error
+  m.test();
+  Mango m2 = new Mango();
+  m2.test(); //Very Sweet
+  f=m2;
+  f.test(); //Very Sweet
+  Watermalon w = new Mango();
+  w.test(); //Not Very Sweet
+}
+
+
+//
+
+
+class Fruit {
+  public static Integer i=0;
+}
+class Mango extends Fruit {
+}
+class Watermalon extends Fruit {
+}
+main() {
+  Fruit w = new Watermalon()
+  w.i = 10
+  Fruit m= new Mango()
+  m.i = 11
+  sout(w.i) //11
+  sout(m.i) //11
+}
+
+
+
+
+  main() {
+
+    Watermalon w = new Watermalon()
+
+    w.i = 10
+
+    Mango m= new Mango()
+
+    m.i = 11
+
+    sout(w.i) //10
+
+    sout(m.i) //11
+
+  }
+
+

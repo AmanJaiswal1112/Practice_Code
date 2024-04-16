@@ -2,7 +2,7 @@ package com.interview.string;
 
 import java.util.function.BiFunction;
 
-public class Test43 {
+public class Implementation_FunctionalInterface {
     public static void main(String[] args) {
         BiFunction<Integer, Integer , Integer> biFunction = (a, b) -> a+b;
 

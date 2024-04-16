@@ -3,7 +3,7 @@ package com.interview.string;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Test42 {
+public class FlatMap_example {
     public static void main(String[] args) {
         System.out.println("Hello");
 

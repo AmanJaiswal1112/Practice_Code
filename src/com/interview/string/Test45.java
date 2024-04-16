@@ -8,11 +8,11 @@ public class Test45 {
         System.out.println("Hello");
 
         List<Emp41> e1 = new ArrayList<>();
-        e1.add(new Emp41(1, 20.00));
-        e1.add(new Emp41(2, 10.00));
-        e1.add(new Emp41(3, 230.00));
-        e1.add(new Emp41(4, 80.00));
-        e1.add(new Emp41(5, 50.00));
+        e1.add(new Emp41(1, 20.00 , "A"));
+        e1.add(new Emp41(2, 10.00, "B"));
+        e1.add(new Emp41(3, 230.00, "c"));
+        e1.add(new Emp41(4, 80.00,"d"));
+        e1.add(new Emp41(5, 50.00, "E"));
 
         findEmpSalaryDESC(e1);
         convertToMapAndSortBasedONSalary(e1);
@@ -56,9 +56,24 @@ class Emp41{
                 '}';
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Emp41(int id, double salary) {
         this.id = id;
+
         this.salary = salary;
+    }
+
+    public Emp41(int id, double salary, String name) {
+        this.id = id;
+        this.salary = salary;
+        this.name = name;
     }
 
     public int getId() {

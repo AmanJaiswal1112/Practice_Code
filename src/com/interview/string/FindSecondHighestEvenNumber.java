@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class Test40 {
+public class FindSecondHighestEvenNumber {
     public static void main(String[] args) {
         System.out.println("hello");
         List<String> numbers = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");

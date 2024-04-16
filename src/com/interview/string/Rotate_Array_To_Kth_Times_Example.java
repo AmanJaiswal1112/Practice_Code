@@ -2,7 +2,7 @@ package com.interview.string;
 
 import java.util.Arrays;
 
-public class Test41 {
+public class Rotate_Array_To_Kth_Times_Example {
     public static void main(String[] args) {
         int arr[]={1,2,3,4,5,6,7};
         int k = 3;
@@ -21,7 +21,7 @@ public class Test41 {
         reverse(arr , 0, k-1);
         reverse(arr , k, arr.length-1);
 
-        synchronized(Test41.class) {
+        synchronized(Rotate_Array_To_Kth_Times_Example.class) {
             System.out.println(Arrays.toString(arr));
             ;
         }
