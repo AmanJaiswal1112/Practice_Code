@@ -5,9 +5,18 @@ import java.util.Arrays;
 public class Rotate_Array_To_Kth_Times_Example {
     public static void main(String[] args) {
         int arr[]={1,2,3,4,5,6,7};
-        int k = 3;
+        int k = 9;
+
+        int arr1[]={1,2,3,4,5};
+        int k1 = 1;
+
+        int arr2[]={1,2,3,4,5};
+        int k2 =2;
 
         doRotate(arr, k);
+        doRotate(arr1, k1);
+
+        doRotate(arr2, k2);
     }
 
     private  static void doRotate(int[] arr, int k) {
@@ -21,10 +30,13 @@ public class Rotate_Array_To_Kth_Times_Example {
         reverse(arr , 0, k-1);
         reverse(arr , k, arr.length-1);
 
-        synchronized(Rotate_Array_To_Kth_Times_Example.class) {
+
+        System.out.println(Arrays.toString(arr));
+
+        /*synchronized(Rotate_Array_To_Kth_Times_Example.class) {
             System.out.println(Arrays.toString(arr));
-            ;
-        }
+
+        }*/
     }
 
     private static void reverse(int[] arr, int i, int i1) {
